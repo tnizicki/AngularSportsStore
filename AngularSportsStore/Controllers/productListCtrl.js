@@ -25,10 +25,14 @@
         $scope.selectedPage = 1;
 
         $scope.getPageClass = function (page) {
-            if (page == selectedPage) {
+            if (page == $scope.selectedPage) {
                 return categoryActiveClass;
             } else {
                 return "";
             }
+        }
+
+        $scope.selectPage = function (newPage) {
+            $scope.selectedPage = newPage;
         }
     });
