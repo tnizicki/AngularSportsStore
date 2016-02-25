@@ -8,12 +8,35 @@
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/bootstrap-theme.css" rel="stylesheet" />
     <script>
-        angular.module("sportsStore", ["customFilters", "cart"]);
+        angular.module("sportsStore", ["customFilters", "cart", "ngRoute"])
+        .config(function ($routeProvider) {
+            $routeProvider.when("/complete", {
+                templateUrl: "/Views/thankYou.html"
+            });
+
+            $routeProvider.when("/placeorder", {
+                templateUrl: "/Views/placeOrder.html"
+            });
+
+            $routeProvider.when("/checkout", {
+                templateUrl: "/Views/checkoutSummary.html"
+            });
+
+            $routeProvider.when("/products", {
+                templateUrl: "/Views/productList.html"
+            });
+
+            $routeProvider.otherwise({
+                templateUrl: "/Views/productList.html"
+            });
+        });
     </script>
     <script src="Controllers/sportsStore.js"></script>
     <script src="Filters/customFilters.js"></script>
     <script src="Controllers/productListCtrl.js"></script>
     <script src="Components/Cart/cart.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Controllers/checkoutController.js"></script>
 </head>
 <body ng-controller="sportsStoreCtrl">
     <div class="navbar navbar-inverse">
@@ -25,6 +48,6 @@
         Błąd ({{data.error.status}}). Dane nie zostały wczytane. <a href="/app.html" class="alert-link">Kliknij tutaj aby spróbować ponownie</a>
     </div>
 
-    <ng-include src="'Views/productList.html'"></ng-include>
+    <ng-view />
 </body>
 </html>
