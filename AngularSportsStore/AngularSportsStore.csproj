@@ -66,6 +66,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Components\Cart\cart.js" />
+    <Content Include="Components\Cart\cartSummary.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Controllers\productListCtrl.js" />
     <Content Include="Filters\customFilters.js" />

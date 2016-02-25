@@ -1,4 +1,5 @@
 ﻿/// <autosync enabled="true" />
+/// <reference path="../components/cart/cart.js" />
 /// <reference path="../controllers/productlistctrl.js" />
 /// <reference path="../Controllers/sportsStore.js" />
 /// <reference path="../filters/customfilters.js" />

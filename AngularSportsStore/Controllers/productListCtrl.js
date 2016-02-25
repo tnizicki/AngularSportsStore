@@ -1,7 +1,7 @@
 ﻿angular.module("sportsStore")
     .constant("categoryActiveClass", "btn-primary")
     .constant("pageSize", 3)
-    .controller("productListCtrl", function ($scope, $filter, categoryActiveClass, pageSize) {
+    .controller("productListCtrl", function ($scope, $filter, categoryActiveClass, pageSize, cart) {
         var selectedCategory = null;
 
         $scope.selectCategory = function (newCategory) {
@@ -34,5 +34,9 @@
 
         $scope.selectPage = function (newPage) {
             $scope.selectedPage = newPage;
+        }
+
+        $scope.addProductToCart = function (item) {
+            cart.addProduct(item.id, item.name, item.price);
         }
     });
